@@ -1,0 +1,438 @@
+html, body{
+    min-width: 1024px;
+
+}
+
+#container_perguntas {
+    background: #f5f5f5;
+}
+#row_perguntas{
+    min-width: 1024px;
+    min-height: 120px;
+    background-color: #dbdbdb;    
+}
+
+#img_laburb{
+    margin-top:12px;  
+}
+
+#contagemClass{
+    font-family: Ek Mukta;
+}
+#iconesFerramentas{
+    color:#272727;
+    margin-top: -5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+#iconeAbreFecha{
+    color:#272727;
+    margin-top: -5px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+#row_cabecalho{
+    //border-bottom:1px solid rgba(158, 150, 150, 0.7);
+    margin-right: 0px;
+}
+
+#descFerramentasPincel{
+    color:#272727;
+    display:inline;
+    margin-left:15px;
+    font-size:14px;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+#descFerramentasBorracha{
+    color:#272727;
+    display:inline;
+    margin-left:15px;
+    font-size:14px;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+#descFerramentasCores{
+    color:#272727;
+    display:inline;
+    margin-left:15px;
+    font-size:16px;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+#descFerramentasLimpar{
+    color:#272727;
+    display:inline;
+    margin-left:15px;
+    font-size:14px;
+    font-weight: 400;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+#perguntaClass {
+}
+#pergunta{
+    font-weight: 300;
+    
+}
+
+#btnEnviar{
+    margin-top:25px;   
+}
+
+#row_ferramentas_mapa{
+    background-color:#f5f5f5;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#ferramentas{
+    background-color: #f5f5f5;  
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#ponderadorPeso{
+    background-color: #f5f5f5;  
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    height: 600px;
+    overflow: scroll;
+    overflow-x: hidden;  
+}
+
+#ul_informacoes{
+    min-height: 212px;
+    
+}
+
+#infoCelula{
+    font-weight: 200;
+}
+
+#infoCores{
+    font-weight: 200;
+}
+
+#ul_ferramentas{
+    overflow:auto;
+    overflow-x:hidden; 
+
+}
+#mapa{
+    min-height: 600px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    margin:0px;
+    padding:0px;
+    position:relative;
+}
+
+#interrogacao{
+    position: absolute;
+    top: 1%;
+    left: 1%;
+}
+
+#info_tutorial {
+    font-family: roboto;
+    background: white;
+    text-align: justify;
+    background-clip: content-box;
+    box-shadow: 5px 5px 5px #888888;
+    border-image: none;
+    border-radius: 4%;
+    width: 30%;
+    height: 90%;
+    border: 10px solid white;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    [draggable=true] {
+      cursor: move;   
+      }
+}
+
+#info_tutorial_apuracao {
+    font-family: roboto;
+    background: white;
+    text-align: justify;
+    background-clip: content-box;
+    box-shadow: 5px 5px 5px #888888;
+    border-image: none;
+    border-radius: 4%;
+    width: 30%;
+    height: 55%;
+    border: 10px solid white;
+    position: absolute;
+    top: 4%;
+    left: 4%;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    [draggable=true] {
+      cursor: move;   
+      }
+}
+
+.resizable {
+    overflow: auto;
+    resize: both;
+    border-radius: 20%;
+    min-width: 90px;
+    max-width: 450px;
+    min-height: 90px;
+    max-height: 590px;
+}
+
+#tamCelula{
+    margin: 20px;
+
+}
+#pincel{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    
+}
+#limpar{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    
+}
+#borracha{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    
+}
+    
+
+.palette {
+    cursor: pointer;
+    border: 1px solid #f0f8ff;
+    float: left;
+    margin: 0px;
+    width: 25px;
+    height: 25px;
+    margin-top: -5px;
+    margin-bottom: 0px;
+    margin-right: 10px;
+    display: block;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    
+}
+
+.coloring {
+    border: 3px solid #808080;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#paletaCores {
+    display: none;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+.clear {
+    clear: left;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#cores{
+    margin-left: 30px;
+    margin-top: 5px;
+    min-height: 150px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#container_rodape{
+    margin-left: -20px;
+    padding-right: 0px;
+}
+#row_rodape{
+    text-align: center; 
+    padding: 20px 0; 
+    border-top: 1px solid #e5e5e5; 
+    background-color: #f5f5f5;
+    bottom: 0;
+
+}
+#p_rodape{
+    color: #999999;
+    font-size:12px
+}
+
+#menux {
+    float: left;
+    margin-left: -60px;
+    padding: 15px;
+    height: 100%;
+    width: 320px;
+    background: #eff0f1;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    overflow: auto;
+}
+
+#menux.active {
+    margin-left: 0;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#div_map_3{
+    min-height: 600px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;    
+}
+
+#lblFerramentas{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px;
+    margin-left: 15px;
+    font-color: gray;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+ 
+}
+#labelFerramentas{
+    min-height: 22px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#lblInformacoes{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 10px;
+    margin-left: 15px;
+    font-color: gray;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+}
+
+#linha{
+
+    margin-left:10px;
+    margin-right: 20px;
+    height: 1px;
+    background:gray;
+    display: block; 
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#descCoresAlta {
+    font-size: 14px;
+    margin-left: 20px;
+    background-color: "";
+    font-family: Ek Mukta;
+        font-weight: 200;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#descCoresMedia {
+    font-size: 14px;
+    margin-left: 20px;
+    background-color: "";
+    font-family: Ek Mukta;
+        font-weight: 200;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#descCoresBaixa {
+    font-size: 14px;
+    margin-left: 20px;
+    background-color: "";
+    font-family: Ek Mukta;
+        font-weight: 200;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+#info{
+    margin-left:20px;
+    margin-right: 25px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#abreFechaFerramentas{
+    bottom:0px;
+    left:0px;
+    margin-right: 45px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#div_abreFecha{
+    margin-left:15px;
+    margin-bottom: 15px;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#space{
+    margin-top: 100%;
+    
+}
+
+#ff0000{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#ffa500{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#ffff00{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#perguntasObjetivas{
+    margin-top: 15px;
+    font-family: Ek Mukta;
+    
+}
+#itemPerguntasObjetivas{
+    font-weight: 200;
+    font-size: 16px;
+    margin-bottom: 10px;
+    
+}
+#descPerguntaObjetiva{
+    font-weight: 300;
+}
+
+#li_borracha{
+    margin-left: 15px;
+    
+}
+
+#li_limpar{
+    margin-left: 15px;
+    
+}
+

@@ -1,0 +1,5 @@
+http://googlemaps.googlermania.com/google_maps_api_v3/en/poly_containsLocation.html
+
+http://xelawho.com/map/rectangles2.html
+
+http://stackoverflow.com/questions/10364624/adding-a-static-1km-grid-to-google-maps-using-php

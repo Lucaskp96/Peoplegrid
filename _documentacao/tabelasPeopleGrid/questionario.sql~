@@ -1,0 +1,14 @@
+CREATE TABLE peoplegrid.questionario
+(
+  id serial NOT NULL,
+  descricao character varying(255),
+  referenciaMapa character varying(255),
+  visivel character varying(1),
+  dt_inicio date,
+  dt_fim date,
+  CONSTRAINT pk_questionario PRIMARY KEY (id)
+  
+)
+WITH (
+  OIDS=FALSE
+);

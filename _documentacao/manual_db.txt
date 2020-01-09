@@ -1,0 +1,58 @@
+Manual DB - PeopleGrid
+==============================
+
+
+
+ALTER TABLE peoplegrid.perguntas_grid DROP CONSTRAINT fk_perguntas_grid_1;
+ALTER TABLE peoplegrid.perguntas_grid ADD CONSTRAINT fk_perguntas_grid_1 FOREIGN KEY (pessoa_id) REFERENCES public.pessoas (id);
+
+select COUNT(questionario_id) from peoplegrid.questionario_perguntas_grid where questionario_id = 1
+
+ALTER TABLE peoplegrid.questionarios ADD COLUMN precisao varchar(10);
+
+ALTER TABLE peoplegrid.grid_respostas rename column pergunta_questionario_grid_id to questionario_pergunta_grid_id  
+
+
+ALTER TABLE peoplegrid.respostas drop column pensou_como_id
+
+
+DROP TABLE peoplegrid.pensou_como;
+CREATE TABLE peoplegrid.pensou_como
+(
+  id serial NOT NULL,
+  descricao character varying(255),
+  dt_cadastro timestamp with time zone DEFAULT now(),
+  CONSTRAINT pensou_como_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE peoplegrid.pensou_como
+  OWNER TO postgres;
+
+
+ALTER TABLE peoplegrid.respostas ADD COLUMN pensou_como_id integer
+ALTER TABLE peoplegrid.respostas ADD CONSTRAINT fk_pensou_como_1 FOREIGN KEY (pensou_como_id) REFERENCES peoplegrid.pensou_como (id);
+
+
+INSERT INTO peoplegrid.pensou_como (descricao) VALUES ('Teste');
+INSERT INTO peoplegrid.nivel_escolaridade (descricao) VALUES ('Teste');
+INSERT INTO peoplegrid.renda_familiar (descricao) VALUES ('Teste');
+
+INSERT INTO peoplegrid.respostas (nivel_escolaridade_id, pensou_como_id, renda_familiar_id)
+	VALUES (1, 1 ,1);
+
+INSERT INTO peoplegrid.grid_respostas (questionario_pergunta_grid_id, resposta_id, grid)
+    VALUES (102, 11, '010');
+
+
+ALTER TABLE peoplegrid.questionario_perguntas_grid ADD COLUMN ordem integer;
+
+ALTER TABLE peoplegrid.perguntas_questionario_dinamicas RENAME TO questionario_perguntas_dinamica;
+ALTER TABLE peoplegrid.grid_respostas ALTER COLUMN grid type text;
+
+ALTER TABLE peoplegrid.questionarios ALTER COLUMN descricao type text;
+ALTER TABLE peoplegrid.questionarios ALTER COLUMN geo_lat type character varying(30);
+
+
+ALTER TABLE peoplegrid.questionarios ADD COLUMN link varchar(50);

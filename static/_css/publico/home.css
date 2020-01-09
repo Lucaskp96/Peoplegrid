@@ -1,0 +1,63 @@
+
+html, body{
+    min-width: 600px;
+    min-height: 1024px;
+
+}  
+
+#nav_cabecalho{
+    border-bottom: 1px solid rgba(202, 202, 202, 1);
+    background-color: #f5f5f5;
+    
+}
+
+#header_listaQuestionarios{
+    margin-top: 60px; 
+    font-family: Ek Mukta;
+    font-weight: 200;
+}
+
+#header_apoiadores{
+    margin-top: 60px; 
+    font-family: Ek Mukta;
+    font-weight: 200;
+}
+
+#div_listaQuestionarios,#div_listaQuestionariosPeopleplan{
+    margin-top: 0px;
+    margin-bottom:-100px; 
+    font-family: Ek Mukta;
+    min-height: 400px;
+}
+
+#listaQuestionarios,#listaQuestionariosPeopleplan{
+    font-family: Ek Mukta;
+    font-weight: 200; 
+}
+
+#listaQuestionarios_filter,#listaQuestionariosPeopleplan_filter{
+    font-family: Ek Mukta;
+    font-weight: 200; 
+}
+
+#questionarioId{
+    font-family: Ek Mukta;
+    font-weight: 200;
+    
+}
+
+#listaQuestionarios_info,#listaQuestionariosPeopleplan_info{
+    font-family: Ek Mukta;
+    font-weight: 200;
+    
+}
+
+#listaQuestionarios_paginate,#listaQuestionariosPeopleplan_paginate{
+    font-family: Ek Mukta;
+    font-weight: 200;
+}
+
+#descricao{
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}

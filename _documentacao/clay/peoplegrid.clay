@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<clay-model clay-version="2.0.1">
+<database-model author="" begin-script="" end-script="" id="dcb430:147889517d4:-7fb0" name="peoplegrid" sql-dialect-id="jp.azzurri.clay.dialect.Postgre_7_3_Dialect" version="1.0">
+<schema-list>
+<schema alias="peoplegrid" id="dcb430:147889517d4:-7fae" name="peoplegrid">
+<table-list>
+<table id="dcb430:147889517d4:-7fab" name="questionarios">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7fa5" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7fa0" mandatory="false" name="descricao">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f9d" mandatory="false" name="geo_lat">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="30" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7fd5" mandatory="false" name="geo_lon">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7fd4" mandatory="false" name="zoom">
+<data-type name="INT" selected-variant-pattern="INT"/>
+</column>
+<column auto-increment="false" column-size="3" decimal-digits="0" default-value="SAT" id="c1ebbf:1478c3e308b:-7fd1" mandatory="false" name="tipo_mapa">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1" decimal-digits="0" default-value="" id="dcb430:147889517d4:-78e1" mandatory="false" name="ativo_pelo_pesquisador">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7fdb" mandatory="false" name="ativo_pelo_adm">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f9c" mandatory="false" name="dt_inicio">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f9b" mandatory="false" name="dt_fim">
+<data-type name="DATE" selected-variant-pattern="DATE"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f97" mandatory="false" name="pessoa_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7fb7" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7faa" name="PK_QUESTIONARIOS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7a2d" name="FK_questionarios_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PESSOAS" referenced-table="pessoas" referenced-table-schema="public" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pessoa_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="dcb430:147889517d4:-7f96" name="perguntas_grid">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f8e" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7fbb" mandatory="false" name="pessoa_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f8d" mandatory="false" name="descricao">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1" decimal-digits="0" default-value="N" id="c1ebbf:1478c3e308b:-7ad2" mandatory="false" name="obrigatoria">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7fba" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f95" name="PK_PERGUNTAS_GRID">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7a73" name="FK_perguntas_grid_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PESSOAS" referenced-table="pessoas" referenced-table-schema="public" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pessoa_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="dcb430:147889517d4:-7f8b" name="grid_respostas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7969" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f87" mandatory="false" name="pergunta_questionario_grid_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f86" mandatory="false" name="resposta_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="4000" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f85" mandatory="false" name="grid">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7fb4" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f8a" name="PK_GRID_RESPOSTAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7dde" name="FK_grid_respostas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_QUESTIONARIO_PERGUNTAS_GRID" referenced-table="questionario_perguntas_grid" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pergunta_questionario_grid_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-7db0" name="FK_grid_respostas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_RESPOSTAS" referenced-table="respostas" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="resposta_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="dcb430:147889517d4:-7f82" name="nivel_escolaridade">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f7e" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f7d" mandatory="false" name="descricao">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7f74" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f81" name="PK_NIVEL_ESCOLARIDADE">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="dcb430:147889517d4:-7f7c" name="renda_familiar">
+<column-list>
+<column alias="descricao" auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f78" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f77" mandatory="false" name="descricao">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7f77" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f7b" name="PK_RENDA_FAMILIAR">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="dcb430:147889517d4:-7f76" name="respostas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f72" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f71" mandatory="false" name="nivel_escolaridade_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f70" mandatory="false" name="pensou_como_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f6f" mandatory="false" name="renda_familiar_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7fab" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f75" name="PK_RESPOSTAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7cf7" name="FK_respostas_3" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PENSOU_COMO" referenced-table="pensou_como" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pensou_como_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-7d0a" name="FK_respostas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_RENDA_FAMILIAR" referenced-table="renda_familiar" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="renda_familiar_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-7d23" name="FK_respostas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_NIVEL_ESCOLARIDADE" referenced-table="nivel_escolaridade" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="nivel_escolaridade_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="dcb430:147889517d4:-7f6e" name="pensou_como">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f6a" mandatory="true" name="id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f69" mandatory="false" name="descricao">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7f7a" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f6d" name="PK_PENSOU_COMO">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="c1ebbf:1478c3e308b:-7f98" name="questionario_perguntas_grid">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7f92" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7f91" mandatory="false" name="pergunta_grid_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7f90" mandatory="false" name="questionario_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7f8f" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="c1ebbf:1478c3e308b:-7f97" name="PK_QUESTIONARIO_PERGUNTAS_GRID">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7f02" name="FK_questionario_perguntas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERGUNTAS_GRID" referenced-table="perguntas_grid" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pergunta_grid_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-7f41" name="FK_questionario_perguntas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_QUESTIONARIOS" referenced-table="questionarios" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="questionario_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="c1ebbf:1478c3e308b:-7ccf" name="perguntas_dinamica">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7ccb" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="255" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7cca" mandatory="false" name="descricao">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="1" decimal-digits="0" default-value="N" id="c1ebbf:1478c3e308b:-7ad9" mandatory="false" name="obrigatoria">
+<data-type name="CHAR" selected-variant-pattern="CHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7cc8" mandatory="false" name="tipo_pergunta_dinamica_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7a94" mandatory="false" name="pessoa_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7cc9" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="c1ebbf:1478c3e308b:-7cce" name="PK_PERGUNTAS_DINAMICA">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7c97" name="FK_perguntas_dinamica_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_TIPO_PERGUNTA_DINAMICA" referenced-table="tipo_pergunta_dinamica" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="tipo_pergunta_dinamica_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-79da" name="FK_perguntas_dinamica_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PESSOAS" referenced-table="pessoas" referenced-table-schema="public" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pessoa_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="c1ebbf:1478c3e308b:-7cc7" name="tipo_pergunta_dinamica">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7cc3" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="45" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7cc2" mandatory="false" name="descricao">
+<data-type name="VARCHAR" selected-variant-pattern="VARCHAR(%n)"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7cc1" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="c1ebbf:1478c3e308b:-7cc6" name="PK_TIPO_PERGUNTA_DINAMICA">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+<table id="c1ebbf:1478c3e308b:-7c66" name="perguntas_questionario_dinamicas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7c62" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7c61" mandatory="false" name="questionario_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7c60" mandatory="false" name="pergunta_dinamica_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7c5d" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="c1ebbf:1478c3e308b:-7c65" name="PK_PERGUNTAS_QUESTIONARIO_DINAMICAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7c07" name="FK_perguntas_questionario_dinamicas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_QUESTIONARIOS" referenced-table="questionarios" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="questionario_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-7c44" name="FK_perguntas_questionario_dinamicas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERGUNTAS_DINAMICA" referenced-table="perguntas_dinamica" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pergunta_dinamica_id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+<table id="c1ebbf:1478c3e308b:-7bd6" name="dinamica_respostas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7bce" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7bcd" mandatory="false" name="pergunta_questionario_dinamica_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7bcc" mandatory="false" name="resposta_id">
+<data-type name="INTEGER" selected-variant-pattern="INTEGER"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="c1ebbf:1478c3e308b:-7bcb" mandatory="false" name="resposta_dinamica">
+<data-type name="TEXT" selected-variant-pattern="TEXT"/>
+</column>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="now()" id="c1ebbf:1478c3e308b:-7bca" mandatory="false" name="dt_cadastro">
+<data-type name="TIMESTAMP" selected-variant-pattern="TIMESTAMP WITH TIME ZONE"/>
+</column>
+</column-list>
+<primary-key id="c1ebbf:1478c3e308b:-7bd5" name="PK_DINAMICA_RESPOSTAS">
+<primary-key-column name="id"/>
+</primary-key>
+<foreign-key-list>
+<foreign-key id="c1ebbf:1478c3e308b:-7b83" name="FK_dinamica_respostas_1" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_PERGUNTAS_QUESTIONARIO_DINAMICAS" referenced-table="perguntas_questionario_dinamicas" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="pergunta_questionario_dinamica_id" referenced-key-column-name="id"/>
+</foreign-key>
+<foreign-key id="c1ebbf:1478c3e308b:-7af0" name="FK_dinamica_respostas_2" on-delete="UNSPECIFIED" on-update="UNSPECIFIED" referenced-key="PK_RESPOSTAS" referenced-table="respostas" referenced-table-schema="peoplegrid" source-entity-role="" source-multiplicity="0..*" source-relationship-type="" target-entity-role="" target-multiplicity="1" target-relationship-type="">
+<foreign-key-column column-name="id" referenced-key-column-name="id"/>
+</foreign-key>
+</foreign-key-list>
+</table>
+</table-list>
+</schema>
+<schema alias="public" id="dcb430:147889517d4:-7f66" name="public">
+<table-list>
+<table id="dcb430:147889517d4:-7f4f" name="pessoas">
+<column-list>
+<column auto-increment="false" column-size="0" decimal-digits="0" default-value="" id="dcb430:147889517d4:-7f4b" mandatory="true" name="id">
+<data-type name="SERIAL" selected-variant-pattern="SERIAL"/>
+</column>
+</column-list>
+<primary-key id="dcb430:147889517d4:-7f4e" name="PK_PESSOAS">
+<primary-key-column name="id"/>
+</primary-key>
+</table>
+</table-list>
+</schema>
+</schema-list>
+</database-model>
+<diagram>
+<table-figure height="223" refid="dcb430:147889517d4:-7fab" width="240" x="953" y="398"/>
+<table-figure height="116" refid="dcb430:147889517d4:-7f96" width="178" x="1504" y="436"/>
+<table-figure height="115" refid="dcb430:147889517d4:-7f8b" width="292" x="1338" y="865"/>
+<table-figure height="102" refid="dcb430:147889517d4:-7f82" width="185" x="600" y="1075"/>
+<table-figure height="102" refid="dcb430:147889517d4:-7f7c" width="185" x="284" y="1022"/>
+<table-figure height="122" refid="dcb430:147889517d4:-7f76" width="200" x="515" y="729"/>
+<table-figure height="103" refid="dcb430:147889517d4:-7f6e" width="177" x="190" y="825"/>
+<table-figure refid="c1ebbf:1478c3e308b:-7f98" x="1307" y="689"/>
+<table-figure refid="c1ebbf:1478c3e308b:-7ccf" x="565" y="22"/>
+<table-figure refid="c1ebbf:1478c3e308b:-7cc7" x="75" y="85"/>
+<table-figure refid="c1ebbf:1478c3e308b:-7c66" x="389" y="354"/>
+<table-figure refid="c1ebbf:1478c3e308b:-7bd6" x="5" y="526"/>
+<table-figure height="89" refid="dcb430:147889517d4:-7f4f" width="179" x="1259" y="158"/>
+</diagram>
+</clay-model>

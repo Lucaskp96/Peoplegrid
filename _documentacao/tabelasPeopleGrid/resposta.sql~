@@ -1,0 +1,8 @@
+CREATE TABLE peoplegrid.resposta
+(
+  id serial NOT NULL,
+  CONSTRAINT pk_resposta PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);

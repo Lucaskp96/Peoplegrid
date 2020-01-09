@@ -1,0 +1,7 @@
+
+
+Exportar banco de dados
+===============================
+
+pg_dump --host localhost --port 5432 --username "postgres" --format plain --no-owner --verbose --file "/home/faurb/peoplegrid" "liverpool"
+

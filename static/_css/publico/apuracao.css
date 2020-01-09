@@ -1,0 +1,60 @@
+html, body{
+    min-width: 1024px;
+}
+
+#buttonSelectedPerguntas {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:5px;
+}
+
+#buttonSelectedAlgoritmos {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:5px;    
+}
+
+#buttonSelectedPensouComo {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:5px;
+}
+
+#buttonSelectedNivelEscolaridade {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:5px;
+}
+
+#buttonSelectedRendaFamiliar {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:5px;
+}
+
+#buttonSelectedClasses {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:5px;
+}
+
+#btnGerarResultado {
+    max-width:180px;
+    min-width:180px;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top:10px;
+    
+}

@@ -1,0 +1,61 @@
+#cabecalho_desc{
+    float: left;
+    background: none !important;
+    border: none !important;
+    font-size: 21px;
+    padding: 0px;
+    margin-top: 7px;
+    margin-bottom: 4px;
+    font-family: ek mukta;
+    font-weight: 300;    
+    
+}
+
+#cabecalho_img{
+    margin-left: 40px;
+    margin-top: 7px;
+    
+}
+
+#margem{
+    margin: 5px;
+}
+
+#div_descricao{
+    float: left; 
+    padding: 10px 0; 
+    left: 0px; 
+    right: 420px; 
+    position: absolute;
+    
+}
+
+#lista{
+    font-family: 'Ek Mukta';
+}
+
+#desc_titulo{
+    
+    
+}
+
+#desc_peoplegrid{
+    margin: 5px; 
+    font-size: 14px; 
+    text-align: justify;
+    font-family: 'Ek Mukta';
+    font-weight: 200;
+}
+
+#desc_escuro{
+    margin: 5px; 
+    font-size: 14px; 
+    text-align: justify; 
+    margin-left: 20px;
+    font-family: 'Ek Mukta';
+    font-weight: 400;
+}
+
+#sem_item{
+   list-style-type: none; 
+}

@@ -1,0 +1,129 @@
+O analytcs é a forma pelo qual analiza-se o fluxo e comportamento do usuário
+	Ele está registrado sobre o id UA-40280251-4. Entenda a composição da função ga
+
+
+	ga('send','event','param1','param2','param3')
+
+	ga() é função pelo qual se envia eventos para o Google Analytics e recebe 4 parametros que são eles:
+		send 	- String 	- Para indicar que o ga está sendo chamado para enviar ao analytics
+		event 	- String	- Indica que é parte de um evento
+		param1	- String	- Pode ser o agrupador de usa escolha, aqui recebe o nome da view que envia o evento
+		param2	- String	- O evento em sim, como por exemplo "click_porta"
+		param3	- Integer	- Valor inteiro, caso haja um peso atrelado ao click_porta por exemplo
+
+
+	São os eventos analisados por ele:
+
+
+	- Eventos da Tela Home
+
+
+		ga('send', 'event', 'homeView', 'visitada', String(id));
+			Este evento possibilita calcular todas as visitas a home page do peoplegrid.
+
+
+		ga('send', 'event', 'homeView', 'pesquisaSelecionada', String(id));
+			Este evento lançado ao ga faz com que possamos analisar as pesquisas selecionadas pelo usuário, assim podemos analisar quantas entradas houveram para aquele pesquisa através da página inicial do projeto.
+
+
+	- Eventos da Tela Colaborar
+
+
+		ga('send', 'event', 'colaborarView', 'pesquisaSelecionada', $('#txtQuestionarioLink').val());
+			Este evento capta todas as entradas no colaborar, pois diferente do pesquisaSelecionada do homeView esse computa tanto as entradas diretas pela plataforma como também quem visita via URL direta.
+
+
+		ga('send', 'event', 'colaborarView', 'borracha',1);
+			Evento que capta a ação de borracha do usuário
+
+
+		ga('send', 'event', 'colaborarView', 'limpar',1);
+			Quando o usuário descido limpar toda a tela então ele usa esse evento de limpar a tela
+
+
+		ga('send', 'event', 'colaborarView', 'lapis_1')
+			Evento que capta a escolha o lapis de 1 ponto apenas para pintar
+
+
+		ga('send', 'event', 'colaborarView', 'lapis_5')
+			Evento que capta a escolha o lapis de 5 pontos
+
+
+		ga('send', 'event', 'colaborarView', 'lapis_9');
+			Evento que capta a escolha o lapis de 9 pontos
+
+
+		ga('send', 'event', 'colaborarView', 'brush');
+			Evento que capta a escolha do brush como pincel para usar
+
+
+		ga('send', 'event', 'colaborarView', 'MenuLateralFechando');
+			Evento pelo qual o usuário que manipula e responde está deixando o menu menor. Menu que está como "<<"
+
+
+		ga('send', 'event', 'colaborarView', 'MenuLateralAbrindo');
+			Evento pelo qual o usuário que manipula e responde está deixando o menu maior. Menu que está como ">>"
+
+
+		ga('send', 'event', 'colaborarView', 'proximaPergunta');
+			Ele notifica que o usuário está indo para responder a próxima pergunta
+
+
+		ga('send', 'event', 'colaborarView', 'proximaPergunta');
+			Ele notifica que o usuário escolheu voltar para a pergunta anterior
+
+
+		ga('send', 'event', 'colaborarView', 'enviado');
+			O resultado foi enviado para o sistema
+
+
+		ga('send', 'event', 'colaborarView', 'enviado_voltando');
+			O usuário enviou as suas respostas e desidiu voltar para a homepage
+
+		ga('send', 'event', 'colaborarView', 'enviado_apuracao');
+			O usuário enviou as suas respostas e descidiu visualizar a apuração
+
+	- Eventos da Tela Apuração
+
+		ga('send', 'event', 'apuracaoView', 'pesquisaSelecionada',$('#txtQuestionarioLink').val());
+			Evento que possibilita visualizar todas as apurações visitas
+
+
+		ga('send', 'event', 'apuracaoView', 'gerarResultado','algoritmo',algoritmo);
+			O usuário apertou para gerar o resultado e selecionou um algoritmo
+
+
+		ga('send', 'event', 'apuracaoView', 'selectedPerguntas','pergunta',pergunta);
+			Usuário selecionou a pergunta para filtrar 
+
+
+		ga('send', 'event', 'apuracaoView', 'selectedClasses','classes',numClasses);
+			Usuário selecionou a classe para filtrar
+
+
+		ga('send', 'event', 'apuracaoView', 'selectedNivelEscolaridade','nivel',nivelEscolar);
+			Usuário selecionou o nivel escolar para filtrar
+
+
+		ga('send', 'event', 'apuracaoView', 'selectedRendaFamiliar','renda',rendaFamiliar);
+			Usuário selecionou a renda familiar para filtrar
+
+
+	- Eventos da Tela Login
+
+		ga('send', 'event', 'loginView', 'visitada');
+			Usuário está na tela de login
+
+
+		ga('send', 'event', 'loginView', 'visitada','entrar');
+			O usuário apertou o botão para tentar entrar
+
+
+		ga('send', 'event', 'loginView', 'visitada','voltar');
+			o usuário apertou o botão para voltar
+
+
+	- Evento da Tela Dashboard
+
+		ga('send', 'event', 'inicioView', 'visitada','dashboard');
+			O usuário está na página inicial do sistema

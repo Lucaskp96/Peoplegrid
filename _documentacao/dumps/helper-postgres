@@ -1,0 +1,15 @@
+
+
+Exportar banco de dados
+===============================
+
+pg_dump liverpool -h localhost -U postgres > /home/faurb/liverpool_dump.sql
+
+Importação banco de dados
+===============================
+
+sudo su - postgres
+createdb liverpool
+psql -e liverpool < /var/www/html/peoplegrid/_documentacao/dumps/liverpool_dump-DATA.sql
+
+
